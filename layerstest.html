@@ -129,19 +129,21 @@
 
 	    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
 	        if ( xDiff > 0 ) {
-	        	alert("left swipe" + xDown + " Y " + yDown);
+	        	//alert("left swipe" + xDown + " Y " + yDown);
+	        	prevMove()
 	            /* left swipe */ 
 	        } else {
-	        	alert("right swipe" + xDown + " Y " + yDown);
+	        	/*alert("right swipe" + xDown + " Y " + yDown);*/
+	        	nextMove()
 	            /* right swipe */
 	        }                       
 	    } else {
 	        if ( yDiff > 0 ) {
 	            /* up swipe */ 
-	        	alert("up swipe" + xDown + " Y " + yDown);
+	        	/*alert("up swipe" + xDown + " Y " + yDown);*/
 	        } else { 
 	            /* down swipe */
-	        	alert("down swipe" + xDown + " Y " + yDown);	            
+	        	/*alert("down swipe" + xDown + " Y " + yDown);	 */           
 	        }                                                                 
 	    }
 	    /* reset values */
