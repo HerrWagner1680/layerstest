@@ -1,0 +1,296 @@
+body{
+	/* background: #333; */
+	background: #ddd;
+	overflow: hidden;
+	cursor: default;
+/*	-ms-transform: rotate(90deg); /* IE 9 */
+ /*   -webkit-transform: rotate(90deg);*/ /* Safari */
+ /*   transform: rotate(90deg);*/
+}
+/*#circ{
+	position: relative;
+	background: red;
+	height: 10px;
+	width: 10px;
+}*/
+
+#first_gif{
+	position: relative;
+	left: -10px;
+	top: 20px;
+	background: url("layers.gif");
+	height: 40px;
+	width: 90px;
+}
+
+#second_gif{
+	position: relative;
+	left: 200px;
+	top: 0px;
+	background: url("layers2.gif");
+	height: 40px;
+	width: 90px;
+}
+
+#third_gif{
+	position: relative;	
+	left: 300px;
+	top: 80px;
+	background: url("layers3.gif");
+	height: 40px;
+	width: 90px;
+}
+
+
+#sq_left{
+	position: fixed;
+/*	top: -100px;*/
+	height: 15px;
+	width: 50px;
+	color: #ccc;
+}
+#sq_top{
+	position: fixed;
+	margin-top: 60px;
+	height: 15px;
+	width: 50px;
+	color: #ccc;
+}
+#marg_l{
+	position: fixed;
+/*	margin-top: 100px;*/
+	height: 15px;
+	width: 50px;
+	color: #ccc;
+}
+#block_pt{
+	position: fixed;
+/*	margin-top: 130px;*/
+	height: 15px;
+	width: 50px;
+	color: red;	
+}
+
+#square{
+	position: relative;
+	left: -84.4px;
+	top: -176.8px;
+    background: url("dext1_r.png");
+/*	width: 450px;
+	height: 250px;*/
+	width: 700px;
+	height: 500px;
+/*	background: #ddd;*/
+	opacity: 1.0;
+}
+#square_2{
+	position: relative;
+	left: -91.5px;
+	top: -713.2px;
+    background: url("dext1_e.png");
+/*	width: 500px;
+	height: 300px;*/
+	width: 700px;
+	height: 500px;
+
+	/*background: #ddd;*/
+	opacity: 1.0;
+}
+#square_3{
+	position: relative;
+	left: -163.4px;
+	top: -1229.6px;
+
+    background-image: url("dext1_b.png");
+/*	width: 600px;
+	height: 350px;*/
+	width: 700px;
+	height: 500px;
+/*	background: #ddd;*/
+	opacity: 1.0;
+}
+#square2{
+	position: relative;
+/*	left: 200px;*/
+	width: 500px;
+	height: 300px;
+	background: #ddd;
+	opacity: 0.2;
+}
+#square3{
+	position: relative;
+/*	left: 200px;*/
+	top: -150px;
+	width: 600px;
+	height: 350px;
+	background: #ddd;
+	opacity: 0.2;
+}
+
+.dot{
+	position: relative;
+	left: 299px;
+	top: 120px;
+	width: 5px;
+	height: 5px;
+	background: black;
+	border-radius: 3px;
+}
+
+#header{
+	width: 100px;
+	height: 100px;
+	cursor: default;
+}
+
+#one{
+	position: relative;
+	/*overflow: hidden; */
+	text-align: center;
+	/*width: 600px;
+	height: 320px; */
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	/*background: orange; */
+	background: url("the500by300.png");
+	color: white;
+	opacity: 1;
+	  -webkit-transition: opacity 1s;
+	  -moz-transition: opacity 1s;
+	  -o-transition: opacity 1s;
+	  -ms-transition: opacity 1s;       
+	  transition: opacity 1s;
+}
+#two{
+	position: relative;
+/*	overflow: hidden;*/
+	text-align: center;
+	top: -320px;
+	/*width: 600px;
+	height: 320px; */
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	/* background: green; */
+	background: url("the600by400.png");
+	color: white;
+	opacity: 0;
+	  -webkit-transition: opacity 1s;
+	  -moz-transition: opacity 1s;
+	  -o-transition: opacity 1s;
+	  -ms-transition: opacity 1s;       
+	  transition: opacity 1s;
+}
+#three{
+	position: relative;
+/*	overflow: hidden;*/
+	text-align: center;
+	top: -710px;
+	/*width: 600px;
+	height: 320px;*/
+	width: 750px;
+	height: 320px;
+	margin: 0 auto;
+	/* background: blue; */
+	background: url("the750by320.png");
+	color: white;
+	opacity: 0;
+	  -webkit-transition: opacity 1s;
+	  -moz-transition: opacity 1s;
+	  -o-transition: opacity 1s;
+	  -ms-transition: opacity 1s;       
+	  transition: opacity 1s;
+}
+
+#container{
+	position: relative;
+	top: -1320px;
+	margin: 0 auto;
+	width: 500px;
+	height: 30px;
+	text-align: center;
+	opacity: 0.5;
+/*	margin: 0 auto;*/
+}
+
+.prev{
+	position: relative;
+	display: inline-block;
+	left: -100px;
+	height: 20px;
+	width: 100px;
+	background: #999;
+	border-radius: 10px;
+}
+.next{
+	position: relative;
+	display: inline-block;
+	left: 100px;
+	height: 20px;
+	width: 100px;
+	background: #999;
+	border-radius: 10px;
+}
+.next:hover,.prev:hover{
+	background: #ccc;
+	cursor: default;
+}
+
+#contain_big_buttons{
+	position: relative;
+	/*top: -920px;*/
+	left: -200px;
+	margin: 0 auto;
+	width: 1200px;
+	height: 700px;
+	text-align: center;
+}
+
+#big_button1{
+	position: relative;
+	background: orange;
+	left: 300px;
+	top: -1050px;
+	opacity: 0.5;
+	height: 450px;
+	width: 400px;
+}
+#big_button2{
+	position: relative;
+	background: yellow;
+	left: 800px;
+	top: -1500px;
+	opacity: 0.5;
+	height: 450px;
+	width: 400px;
+}
+
+
+#mydiv {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background: green;
+	opacity: 0.9;
+	z-index: 500;
+}
+#mydiv2 {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: blue;
+	opacity: 0.5;
+	z-index: 500;
+}
+
+/* below - pointxx and pointyy added for Android testing */
+/* body background color also changed */
+
+#demopointxx {
+	font-size: 25px;
+}
+
+#demopointyy {
+	font-size: 25px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="layerstest.css">
+	<title>Transition</title>
+</head>
+<!-- <body id="the_body" onmousemove="showCoords(event)" onmouseout="clearCoor()"> -->
+<body id="the_body" onkeypress="uniCharCode(event)" onmouseout="clearCoor()">
+	<div id="header">	
+		<p id="epicenter"></p> 
+		<p id="demopointxx"></p>
+		<p id="demopointyy"></p>
+		<p id="sq_left"></p>
+		<p id="sq_top"></p>
+	</div>
+
+<br>
+<br>
+<br>
+<!-- <div id="first_gif"><img src="layers.gif"/></div>
+<div id="second_gif"><img src="layers2.gif"/></div>
+<div id="third_gif"><img src="layers3.gif"/></div>
+	<div id="circ"></div> -->
+
+	<div class="container">
+		<div id="one">1<p class="dot"></p><p id="first_gif"></p><p id="second_gif"></p><p id="third_gif"></p></div>
+		<div id="two">2<p class="dot"></p><p id="square2"></p></div>
+		<div id="three">3<p class="dot"></p><p id="square3"></p></div>
+
+	</div>
+
+	<div id="contain_big_buttons">
+		<div id = "big_button1" onclick="prevMove()">&#60;</div>
+		<div id = "big_button2" onclick="nextMove()">&#62;</div>
+	</div>
+
+	<div id="container">
+		<div class="prev" onclick="prevMove()">&#60;</div>
+		<div class="next" onclick="nextMove()">&#62;</div>
+	</div>
+	
+</body>
+
+<script>
+
+	function uniCharCode(event) {
+    var char = event.which || event.keyCode;
+    	// event.which covers < and >
+    	// event.keyCode covers left and righ arrow
+
+        switch (event.which || event.keyCode) {
+        case 37:
+            event.preventDefault(); //this prevents scroll
+            //alert("LEFT ARROW");
+            prevMove()
+            break;
+        case 39:
+        	event.preventDefault(); //this prevents scroll
+            //alert("RIGHT ARROW");
+            nextMove()
+            break;       
+        case 44:
+            //alert(" < ");
+            prevMove()
+            break; 
+        case 46:
+            //alert(" > ");
+            nextMove()
+            break; 
+        }
+    
+    //document.getElementById("the_body").innerHTML = "Unicode CHARACTER code: " + char;
+	}
+
+	// left arrow = 37,  right arrow = 39
+	// < is 44,  > is 46
+
+	var left_margin = (window.innerWidth-600)/2 - 8
+	// DOUBLE CLICK MAKES ARROW DISAPPEAR AND REAPPEAR
+	var i = 0;
+	document.getElementById('the_body').addEventListener('dblclick', function(){
+		i = i+1
+		if (i%2===0){
+		 	// alert('yep' + ' i' + i);
+		 	return document.getElementById('the_body').style.cursor = 'default';
+		 	}
+		else { //alert("else default"); 		
+			return document.getElementById('the_body').style.cursor = 'none';
+			};
+	});
+		boxes = ["one","two","three"];
+		var x = 0;
+		function prevMove(){
+			document.getElementById(boxes[x]).style.opacity = "0";
+			x = x - 1
+			if (x < 0) { x = 2 }
+			document.getElementById(boxes[x]).style.opacity = "1.0";
+		}
+		function nextMove(){
+			document.getElementById(boxes[x]).style.opacity = "0";
+			x = x + 1
+			if (x > 2) { x = 0 }
+			document.getElementById(boxes[x]).style.opacity = "1.0";
+		}
+	// You want the objects to move in the opposite direction from the pointer
+	// Default epicenter 450x 300y
+
+</script>
