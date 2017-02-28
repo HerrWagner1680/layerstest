@@ -1,0 +1,40 @@
+real challenge is when to load assets
+
+divide into sets
+no more than 10 images to a set
+
+a set could have same background
+one or two gifs that remain and don't change
+then 4 or 5 gifs or layers that do change
+
+a new set would load as if it were a new panel with all new assets
+for this early easy version we'll load when we need it, when
+the viewer requests to see it
+
+in later versions you could load two or three sets at a time
+always have the next one loading so no wait time
+like the infinite scroll on duckduckgo
+
+========================
+DESCRIBING THE JSON OBJECT OF ONE SET
+
+Each step is a frame (or panel).
+You can describe the contents of that frame. Lowest Z-index number first
+Say Frame 1: trees.gif z-index: -500, characters.png z-index: -300,
+wagon.png z-index -200, wheels.gif z-index 100, text_balloon1.gif z-index 200
+
+Say Frame 1: same, same, same, same, text_balloon2.gif z-index200
+
+You can use "same" as a kind of ditto, "do not refresh" comment.
+
+Early version, you don't event have to add z-index to the CSS. It can
+just be there as a way of defining the layer positions.
+
+-----
+You also want a thumbnail image representing each set
+That way you can quickly scroll ahead, or scroll backwards.
+
+You can even have an opacity setting on the layers, in order
+to create a kind of texture.
+
+===

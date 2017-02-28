@@ -1,0 +1,87 @@
+{
+	"layer": [{
+		"set_id": 1,
+		"frame_id": 1,
+		"layer_id": 1,
+		"file_name": "sdfgasdqewqeqwe",
+		"height": 234,
+		"length": 256,
+		"opacity": 1,
+		"description": "bottom layer for wagon sc",
+		"z_index": -34,
+		"top": 56,
+		"left": 100
+	}, {
+		"set_id": 1,
+		"frame_id": 1,
+		"layer_id": 2,
+		"file_name": "hjhjgqweqweqwe",
+		"height": 654,
+		"length": 234,
+		"opacity": 1,
+		"description": "top layer for wagon sc",
+		"z_index": 5,
+		"top": 56,
+		"left": 100
+	}, {
+		"set_id": 1,
+		"frame_id": 2,
+		"layer_id": 3,
+		"file_name": "sdfgewqeqwe",
+		"height": 24,
+		"length": 25,
+		"opacity": 1,
+		"description": "bottom layer for tree sc",
+		"z_index": -34,
+		"top": 56,
+		"left": 100
+	}, {
+		"set_id": 1,
+		"frame_id": 2,
+		"layer_id": 4,
+		"file_name": "eeqwe",
+		"height": 654,
+		"length": 24,
+		"opacity": 1,
+		"description": "middle layer for tree sc",
+		"z_index": 5,
+		"top": 56,
+		"left": 100
+	}, {
+		"set_id": 1,
+		"frame_id": 2,
+		"layer_id": 5,
+		"file_name": "eererererweqwe",
+		"height": 64,
+		"length": 234,
+		"opacity": 1,
+		"description": "top layer for tree sc",
+		"z_index": 15,
+		"top": 56,
+		"left": 100
+	}, {
+		"set_id": 1,
+		"frame_id": 3,
+		"layer_id": 6,
+		"file_name": "eeqwe",
+		"height": 654,
+		"length": 24,
+		"opacity": 1,
+		"description": "layer for e sc",
+		"z_index": 5,
+		"top": 56,
+		"left": 100
+	}, {
+		"set_id": 1,
+		"frame_id": 3,
+		"layer_id": 7,
+		"file_name": "pvvvvvveqwe",
+		"height": 64,
+		"length": 234,
+		"opacity": 1,
+		"description": "layer for ree sc",
+		"z_index": 15,
+		"top": 56,
+		"left": 100
+	}]
+}

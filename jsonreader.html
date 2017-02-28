@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- PATH: /Users/gorey/Desktop/layerstest/jsonreader.html -->
+<!-- require simple server to run -->
+	<meta charset="UTF-8">
+	<!-- <link rel="stylesheet" type="text/css" href="layerstest.css"> -->
+	<title>Transition</title>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+</head>
+<!-- <body id="the_body" onmousemove="showCoords(event)" onmouseout="clearCoor()"> -->
+<body id="the_body">
+
+<br>
+<br>
+<br>
+
+	<div id="header">
+		<p id="json_data"></p>
+	</div>
+
+	<button onclick="changeData(event, -1)"> <<< Change JSON line </button>
+	<button onclick="changeData(event, +1)"> Change JSON line >>> </button>
+	<div id="images0"></div>
+	<div id="images1"></div>
+	<div id="images2"></div>
+	<div id="images3"></div>
+	<div id="images4"></div>
+	<div id="images5"></div>
+	<div id="images6"></div>
+	<div id="images7"></div>
+	<div id="images8"></div>
+
+</body>
+
+<script>
+// use http://jsonlint.com/ to find errors
+	(function() {
+			$.getJSON( "other.json", {
+				opacity: 1
+			})
+				.done(function( data ) {
+					$.each( data.file_name, function( i, file_name ) {
+						$( "<p>" ).html( file_name ).appendTo( "#images");
+					});
+				});
+	})();
+
+// EXAMPLE: aaa = {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323};
+	var aaa
+	aaa = {frame: {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323}},
+	{frame: {asdf: 2, rety: "ter", werrrr: 22, qwe: {werrerer: 34, ererer: "tr"}, wer: 23}};
+	var www
+	www = [{frames: [{asfd:234, ret: "sdfsdfs"}, {asfd:543, ret: "ytyty"}]},
+	{frames: [{asfd:4, ret: "sxxxxs"}, {asfd:3, ret: "ppyghghgtyty"}]},
+	{frames: [{asfd:23, ret: "qqqqs"}, {asfd:43, ret: "ghghghghg"}]}]
+
+// JSON
+// SET -- meaning one part remains the same
+// FRAME --
+// LAYER
+// www[1].fra mes[1].asfd = 3
+// qqq = {set: [{frame: [{layer: [{file_name: "sdfsdf", height: 45, z_index: 345}]}]}]}
+// qqq.set[0].frame[0].layer[0].file_name === "sdfsdf"
+
+	document.getElementById("json_data").textContent = JSON.stringify(aaa)
+
+	n = 0
+	f = 0
+
+
+		rrr = $.getJSON("other.json", function() {
+			console.log( "success" );
+		})
+			.done(function() {
+				console.log( ' DONE ');
+			})
+			.fail(function() {
+				console.log ( ' FAIL ');
+			})
+			.always(function() {
+				console.log( "complete" );
+				ooo = $.parseJSON(rrr.responseText)
+				console.log(ooo)
+				console.log(JSON.stringify(ooo))
+				num = ooo.layer.length
+				//length_of_set = ooo.set.length
+				//length_of_frame = ooo.set[0].frame.length
+				//length_of_layers = ooo.set[0].frame[0].layer.length
+				//console.log("# of sets: " + length_of_set.toString() + "... frames: " + length_of_frame.toString() + "... layers: " + length_of_layers.toString())
+			})
+
+			//num = ooo.layer.length
+			// ooo.layer[num].frame_id
+			// you can try using FILTER to find specific entry
+
+			frame = 0
+			//layer = 0
+			arr = []
+
+	function changeData(event, dir) {
+			$("button").blur()
+			frame = frame + dir
+			if (frame === 4){ frame = 1 }
+			if (frame < 1 ){ frame = 3 }
+
+		//grouping of layers, frame by frame
+			$("#images0").text("");
+			$("#images1").text("");
+			$("#images2").text("");
+			$("#images3").text("");
+			$("#images4").text("");
+			$("#images5").text("");
+			$("#images6").text("");
+			$("#images7").text("");
+			$("#images8").text("");
+			console.log("frame: " + frame.toString() + "...layer " + "..NONE");
+			for (i = 0; i < num; i++){
+				//z = i.toString()
+				if (ooo.layer[i].frame_id === frame){
+						arr.push(i)
+						$("#images" + i.toString()).text(JSON.stringify(ooo.layer[i]));
+						//$("#images5").text("sdfsdfs");
+				}
+				//console.log(arr);
+			};
+
+			console.log(arr);
+			arr = []
+			// alert("you hit button");
+			//$.parseJSON(ooo).set[0].frame[0].layer[n%2]
+			//var qqq = $.parseJSON(ooo).set[0].frame[0].layer[n%2]
+			document.getElementById("json_data").textContent = JSON.stringify(ooo.layer[6])
+			//$("#images" + frame.toString()).text("iuiui " + frame.toString());
+
+			//n = n + 1
+			//f = f + 0.5
+
+			//frame = frame + dir
+			//if (frame === 4){ frame = 1 }
+			//if (frame =< 0 ){ frame = 3 }
+
+			//layer = layer + dir
+			//if (layer === 8){ layer = 0 }
+			//if (frame === -1){ frame = 7 }
+			// for modulus version 1/(setlength * frame length * layer length)
+	};
+
+</script>
