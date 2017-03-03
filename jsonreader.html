@@ -11,6 +11,31 @@
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 </head>
+<style>
+			#contain_big_buttons{
+				position: fixed;
+				top: 200px;
+				/* left: 130px; */
+				/* margin: 0 auto; */
+				width: 100%;
+				height: 420px;
+				text-align: center;
+			}
+			#big_button1{
+				display: inline-block;
+				width: 40%;
+				height: 100%;
+				background: cyan;
+				opacity: 0.3;
+			}
+			#big_button2{
+				display: inline-block;
+				width: 40%;
+				height: 100%;
+				background: purple;
+				opacity: 0.3;
+			}
+</style>
 <!-- <body id="the_body" onmousemove="showCoords(event)" onmouseout="clearCoor()"> -->
 <body id="the_body">
 
@@ -29,15 +54,20 @@
 	<br>
 	<br>
 
-	<div id="images0"></div>
-	<div id="images1"></div>
-	<div id="images2"></div>
-	<div id="images3"></div>
-	<div id="images4"></div>
-	<div id="images5"></div>
-	<div id="images6"></div>
-	<div id="images7"></div>
-	<div id="images8"></div>
+	<div id="images0" style="text-align: center;"></div>
+	<div id="images1" style="text-align: center;"></div>
+	<div id="images2" style="text-align: center;"></div>
+	<div id="images3" style="text-align: center;"></div>
+	<div id="images4" style="text-align: center;"></div>
+	<div id="images5" style="text-align: center;"></div>
+	<div id="images6" style="text-align: center;"></div>
+	<div id="images7" style="text-align: center;"></div>
+	<div id="images8" style="text-align: center;"></div>
+
+	<div id="contain_big_buttons">
+		<div id = "big_button1" onclick="changeData(event, -1)"></div>
+		<div id = "big_button2" onclick="changeData(event, +1)"></div>
+	</div>
 
 </body>
 
