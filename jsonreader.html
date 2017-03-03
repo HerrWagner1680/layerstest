@@ -54,6 +54,8 @@
 				});
 	})();
 
+	url = "https://herrwagner1680.github.io/layerstest/"
+
 	// EXAMPLE: aaa = {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323};
 		/* var aaa
 		aaa = {frame: {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323}},
@@ -186,7 +188,7 @@
 								//console.log("ii is: " + ii + ".. iii is: " + iii + "... and q is: " + q);
 								//console.log("J entry file name: " + j_entry.file_name);
 								// iii is the images number
-								$('#images' + iii.toString()).prepend($('<img>',{class:'theImg',src: j_entry.file_name, height: String(j_entry.height) + "px" }))
+								$('#images' + iii.toString()).prepend($('<img>',{class:'theImg',src: url + j_entry.file_name, height: String(j_entry.height) + "px" }))
 							  $('#images' + iii.toString()).css({
 														      "position": "relative",
 														      "top": String(-180 * iii) + "px"
