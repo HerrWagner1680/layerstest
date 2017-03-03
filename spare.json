@@ -1,0 +1,12 @@
+set_1_json = {
+"frame_1": ["the500by300.png", "layers3.gif", "none", "none"],
+"frame_2": ["same", "same", "balloon4_400by200.png", "none"],
+"frame_3": ["same", "same", "balloon1_400by200.png", "none"],
+"frame_4": ["same", "none", "none", "none"],
+"frame_5": ["the600by400.png", "layers2.gif", "none", "none"],
+"frame_6": ["same", "same", "none", "balloon1_400by200.png"],
+"frame_7": ["same", "none", "balloon3_400by200.png", "same"],
+"frame_8": ["same", "none", "same", "none"],
+"frame_9": ["the750by320.png", "none", "none", "none"],
+"frame_10": ["same", "none", "balloon2_400by200.png", "none"]
+};

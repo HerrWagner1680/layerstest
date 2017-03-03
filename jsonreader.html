@@ -24,6 +24,11 @@
 
 	<button onclick="changeData(event, -1)"> <<< Change JSON line </button>
 	<button onclick="changeData(event, +1)"> Change JSON line >>> </button>
+	<br>
+	<br>
+	<br>
+	<br>
+
 	<div id="images0"></div>
 	<div id="images1"></div>
 	<div id="images2"></div>
@@ -49,28 +54,53 @@
 				});
 	})();
 
-// EXAMPLE: aaa = {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323};
-	var aaa
-	aaa = {frame: {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323}},
-	{frame: {asdf: 2, rety: "ter", werrrr: 22, qwe: {werrerer: 34, ererer: "tr"}, wer: 23}};
-	var www
-	www = [{frames: [{asfd:234, ret: "sdfsdfs"}, {asfd:543, ret: "ytyty"}]},
-	{frames: [{asfd:4, ret: "sxxxxs"}, {asfd:3, ret: "ppyghghgtyty"}]},
-	{frames: [{asfd:23, ret: "qqqqs"}, {asfd:43, ret: "ghghghghg"}]}]
+	// EXAMPLE: aaa = {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323};
+		/* var aaa
+		aaa = {frame: {asdf: 234, rety: "erter", werrrr: 2342, qwe: {werrerer: 234, ererer: "trtr"}, wer: 323}},
+		{frame: {asdf: 2, rety: "ter", werrrr: 22, qwe: {werrerer: 34, ererer: "tr"}, wer: 23}};
 
-// JSON
-// SET -- meaning one part remains the same
-// FRAME --
-// LAYER
-// www[1].fra mes[1].asfd = 3
-// qqq = {set: [{frame: [{layer: [{file_name: "sdfsdf", height: 45, z_index: 345}]}]}]}
-// qqq.set[0].frame[0].layer[0].file_name === "sdfsdf"
+		document.getElementById("json_data").textContent = JSON.stringify(aaa)
+	 */
 
-	document.getElementById("json_data").textContent = JSON.stringify(aaa)
+	 set_1_json = {
+	 "frame_1": ["the500by300.png", "layers3.gif", "none", "none"],
+	 "frame_2": ["the500by300.png", "layers3.gif", "balloon4_400by200.png", "none"],
+	 "frame_3": ["the500by300.png", "layers3.gif", "balloon1_400by200.png", "none"],
+	 "frame_4": ["the500by300.png", "none", "none", "none"],
+	 "frame_5": ["the600by400.png", "layers2.gif", "none", "none"],
+	 "frame_6": ["the600by400.png", "layers2.gif", "none", "balloon1_400by200.png"],
+	 "frame_7": ["the600by400.png", "none", "balloon3_400by200.png", "balloon1_400by200.png"],
+	 "frame_8": ["the600by400.png", "none", "balloon3_400by200.png", "none"],
+	 "frame_9": ["the750by320.png", "none", "none", "none"],
+	 "frame_10": ["the750by320.png", "none", "balloon2_400by200.png", "none"]
+	 };
+	 // be careful with SAME - must be bookended by identical file name
+	 // or else it will appear different when going backwards
+	 // REVISION - SAME ok for draft - must remove for final
+
+	 // whenever read the next frame line, create / revise current array
+	 // num_times_loop = Object.keys(set_1_json).length
+	 // frame_num = "frame_" + String(loop_num)
+
+ 		//  ii+1 is the frame number; iii is the layer - or the index position
+
+
+		// whenever read the next frame line, create / revise current array
+		// num_times_loop = Object.keys(set_1_json).length
+		// frame_num = "frame_" + String(loop_num)
+
+		// The above code converts rrr into the current frame array
+		// JSON
+		// SET -- meaning one part remains the same
+		// FRAME --
+		// LAYER
 
 	n = 0
 	f = 0
-
+		//Cache false allows you to change and update JSON
+		$.ajaxSetup({
+		  cache:false
+		});
 
 		rrr = $.getJSON("other.json", function() {
 			console.log( "success" );
@@ -84,30 +114,21 @@
 			.always(function() {
 				console.log( "complete" );
 				ooo = $.parseJSON(rrr.responseText)
-				console.log(ooo)
-				console.log(JSON.stringify(ooo))
+				// console.log(ooo)
+				// console.log(JSON.stringify(ooo))
 				num = ooo.layer.length
 				//length_of_set = ooo.set.length
 				//length_of_frame = ooo.set[0].frame.length
 				//length_of_layers = ooo.set[0].frame[0].layer.length
-				//console.log("# of sets: " + length_of_set.toString() + "... frames: " + length_of_frame.toString() + "... layers: " + length_of_layers.toString())
 			})
-
-			//num = ooo.layer.length
-			// ooo.layer[num].frame_id
-			// you can try using FILTER to find specific entry
 
 			frame = 0
 			//layer = 0
-			arr = []
+			//arr = []
 
 	function changeData(event, dir) {
 			$("button").blur()
-			frame = frame + dir
-			if (frame === 4){ frame = 1 }
-			if (frame < 1 ){ frame = 3 }
-
-		//grouping of layers, frame by frame
+			// Clear images from last frame
 			$("#images0").text("");
 			$("#images1").text("");
 			$("#images2").text("");
@@ -117,36 +138,61 @@
 			$("#images6").text("");
 			$("#images7").text("");
 			$("#images8").text("");
-			console.log("frame: " + frame.toString() + "...layer " + "..NONE");
-			for (i = 0; i < num; i++){
-				//z = i.toString()
-				if (ooo.layer[i].frame_id === frame){
-						arr.push(i)
-						$("#images" + i.toString()).text(JSON.stringify(ooo.layer[i]));
-						//$("#images5").text("sdfsdfs");
-				}
-				//console.log(arr);
-			};
 
-			console.log(arr);
-			arr = []
-			// alert("you hit button");
-			//$.parseJSON(ooo).set[0].frame[0].layer[n%2]
-			//var qqq = $.parseJSON(ooo).set[0].frame[0].layer[n%2]
+			num = Object.keys(set_1_json).length
+			frame = frame + dir
+			if (frame === num+1 ){ frame = 1}
+			if (frame < 1 ){ frame = num }
+			console.log("FRAME>>>" + frame);
+
+					ii = frame - 1
+					fr = "frame_" + String(ii+1);
+					layers_per_fr = 4
+					for (iii=0; iii < layers_per_fr; iii++){
+							if (set_1_json[fr][iii] === "same"){
+									//console.log("THE SAME!!" + "ii: " + ii + " iii: " + iii + " layers_per_fr: " + layers_per_fr); // run a function
+							} else if (set_1_json[fr][iii] === "none"){
+								  //console.log("IT'S NONE!!" + "ii: " + ii + " iii: " + iii + " layers_per_fr: " + layers_per_fr); // run a function
+									// console.log("#images"+ String(iii) + " div " + " add text '' ");
+									$("#images"+ String(iii)).empty();
+									// break; /* this jumps to next iteration of loop */
+							} else {
+									//console.log("PROPER NAME!!!!!!!" + "ii: " + ii + " iii: " + iii + " layers_per_fr: " + layers_per_fr);
+									updateLayer(ii, iii, fr);
+							}
+							//console.log(set_1_json[fr][iii]);
+					}
+
+			// saving memory and working efficiently will be based on
+			// the reader, how the data is interpreted, not the JSON
+			// easiest is to compare image name or src to src in divs
+
+			// look for the layer in the json that matches the
+			// truncated json file name
+			// if (www.layer[i].file_name === "layers.gif") { console.log("trigger function");}
+			// once you find that i, you use the i to find related JSON height data
+
 			document.getElementById("json_data").textContent = JSON.stringify(ooo.layer[6])
-			//$("#images" + frame.toString()).text("iuiui " + frame.toString());
+		};
 
-			//n = n + 1
-			//f = f + 0.5
-
-			//frame = frame + dir
-			//if (frame === 4){ frame = 1 }
-			//if (frame =< 0 ){ frame = 3 }
-
-			//layer = layer + dir
-			//if (layer === 8){ layer = 0 }
-			//if (frame === -1){ frame = 7 }
-			// for modulus version 1/(setlength * frame length * layer length)
-	};
+		function updateLayer(ii, iii, fr){
+				// updating the layer
+				//console.log("UPDATE" + " iii: " + iii + " fr: " + fr);
+				//console.log("SET 1: " + set_1_json[fr][iii])
+				num_layers = ooo.layer.length
+				for (q=0; q < num_layers; q++){
+						j_entry = ooo.layer[q]
+						if (set_1_json[fr][iii] === j_entry.file_name){
+								//console.log("ii is: " + ii + ".. iii is: " + iii + "... and q is: " + q);
+								//console.log("J entry file name: " + j_entry.file_name);
+								// iii is the images number
+								$('#images' + iii.toString()).prepend($('<img>',{class:'theImg',src: j_entry.file_name, height: String(j_entry.height) + "px" }))
+							  $('#images' + iii.toString()).css({
+														      "position": "relative",
+														      "top": String(-180 * iii) + "px"
+														    });
+						};
+				};
+		};
 
 </script>
