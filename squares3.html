@@ -15,6 +15,35 @@
         body{
           background: #555;
         }
+				#matte_1{
+					position: relative;
+					height: 420px;
+					width: 20px;
+					opacity: 0; /* can not have display none because other matte positions are affected */
+					background: pink;
+					z-index: 50;
+					top: -1220px;
+				}
+				#matte_2{
+					position: relative;
+					height: 420px;
+					width: 20px;
+					opacity: 1;
+					background: #555;
+					z-index: 50;
+					top: -1640px;
+					left: 445px;
+				}
+				#matte_3{
+					position: relative;
+					height: 420px;
+					width: 20px;
+					opacity: 1;
+					background: #555;
+					z-index: 50;
+					top: -2055px;
+					left: 900px;
+				}
 
 </style>
 <!-- <body id="the_body" onmousemove="showCoords(event)" onmouseout="clearCoor()"> -->
@@ -25,5 +54,7 @@
 <img src="barn.png" style="height: 400px; width: 450px; position: relative; left: 5px; top: -400px;"/>
 <img src="tree.png" style="height: 400px; width: 450px; position: relative; top: -800px;"/>
 <img src="tree.png" style="height: 400px; width: 450px; position: relative; left: 2px; top: -800px;"/>
-
+<div id="matte_1"></div>
+<div id="matte_2"></div>
+<div id="matte_3"></div>
 </body>
