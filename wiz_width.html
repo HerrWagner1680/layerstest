@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- PATH: /Users/gorey/Desktop/layerstest/wizard_id.html -->
+<!-- PATH: /Users/gorey/Desktop/layerstest/wiz_width.html -->
 <!-- require simple server to run -->
 	<meta charset="UTF-8">
 	<!-- <link rel="stylesheet" type="text/css" href="layerstest.css"> -->
@@ -44,17 +44,39 @@
 					top: -2055px;
 					left: 900px;
 				}
+				#slider{
+					position: fixed;
+					opacity: 0.6;
+					top: 200px;
+					left: 300px;
+				}
 
 </style>
 <!-- <body id="the_body" onmousemove="showCoords(event)" onmouseout="clearCoor()"> -->
 <body id="the_body">
 <img src="wizard_of_id_1c.png" style="height: 302px; width: 295px; position: relative; left: -7px;"/>
-<img src="wizard_of_id_1c.png" style="height: 302px; width: 295px; position: relative; left: 39px;"/>
+<img id="right_img_c" src="wizard_of_id_1c.png" style="height: 302px; width: 295px; position: relative; left: 39px;"/>
 <img src="wizard_of_id_1b.png" style="height: 302px; width: 295px; position: relative; left: -598px; top: 0px;"/>
-<img src="wizard_of_id_1b.png" style="height: 302px; width: 295px; position: relative; left: 328px; top: -306px;"/>
+<img id="right_img_b" src="wizard_of_id_1b.png" style="height: 302px; width: 295px; position: relative; left: 328px; top: -306px;"/>
 <img src="wizard_of_id_1a.png" style="height: 302px; width: 295px; position: relative; left: -296px; top: -305px;"/>
-<img src="wizard_of_id_1a.png" style="height: 302px; width: 295px; position: relative; left: -289px; top: -305px;"/>
+<img id="right_img_a" src="wizard_of_id_1a.png" style="height: 302px; width: 295px; position: relative; left: -289px; top: -305px;"/>
 <div id="matte_1"></div>
 <div id="matte_2"></div>
 <div id="matte_3"></div>
+
+<div id="slider">
+<label for="fader">Width between images</label>
+<input type="range" min="0" max="150" value="0" id="fader"
+	step="1" oninput="outputUpdate(value)">
+<output for="fader" id="volume">0</output>
+</div>
+
 </body>
+<script>
+function outputUpdate(vol) {
+	document.querySelector('#volume').value = vol;
+	$("#right_img_c").css("left", String(vol/1 + 39) + "px");
+	$("#right_img_b").css("left", String(vol/1 + 328) + "px");
+	$("#right_img_a").css("left", String(vol/1 - 289) + "px");
+}
+</script>
