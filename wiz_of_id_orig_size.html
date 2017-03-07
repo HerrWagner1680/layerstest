@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- PATH: /Users/gorey/Desktop/layerstest/wizard_id.html -->
+<!-- require simple server to run -->
+	<meta charset="UTF-8">
+	<!-- <link rel="stylesheet" type="text/css" href="layerstest.css"> -->
+	<title>Squares 2 Test</title>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+</head>
+<style>
+        body{
+          background: #ddd;
+        }
+				#matte_1{
+					position: relative;
+					height: 420px;
+					width: 20px;
+					opacity: 0; /* can not have display none because other matte positions are affected */
+					background: pink;
+					z-index: 50;
+					top: -1220px;
+				}
+				#matte_2{
+					position: relative;
+					height: 420px;
+					width: 20px;
+					opacity: 1;
+					background: #555;
+					z-index: 50;
+					top: -1640px;
+					left: 445px;
+				}
+				#matte_3{
+					position: relative;
+					height: 420px;
+					width: 20px;
+					opacity: 1;
+					background: #555;
+					z-index: 50;
+					top: -2055px;
+					left: 900px;
+				}
+
+</style>
+<!-- <body id="the_body" onmousemove="showCoords(event)" onmouseout="clearCoor()"> -->
+<body id="the_body">
+<img src="wizard_of_id_1c.png" style="height: 302px; width: 295px; position: relative"/>
+<img src="wizard_of_id_1c.png" style="height: 302px; width: 295px; position: relative; left: 22px;"/>
+<img src="wizard_of_id_1b.png" style="height: 302px; width: 295px; position: relative; left: -600px; top: 0px;"/>
+<img src="wizard_of_id_1b.png" style="height: 302px; width: 295px; position: relative; left: 308px; top: -306px;"/>
+<img src="wizard_of_id_1a.png" style="height: 302px; width: 295px; position: relative; left: -302px; top: -305px;"/>
+<img src="wizard_of_id_1a.png" style="height: 302px; width: 295px; position: relative; left: -309px; top: -305px;"/>
+<div id="matte_1"></div>
+<div id="matte_2"></div>
+<div id="matte_3"></div>
+</body>
